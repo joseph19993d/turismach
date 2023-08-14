@@ -1,23 +1,24 @@
-"use client"
-import React, { useState } from "react";
+
+
+import { useState } from "react";
 import { House } from '@phosphor-icons/react';
 import colors from 'tailwindcss/colors';
 import './style.css';
 
-export default function nav() {
+export const Nav =  () => {
 
-    const [activeHomeLink, setActiveHomeLink] = useState(null);
+    const [activeHomeLink, setActiveHomeLink] = useState(false);
 
     const handleLinkHomeClick = (index) => {
         setActiveHomeLink(index);
-        setActiveTravelLink(null);
+        setActiveTravelLink(false);
     };
 
-    const [activeTravelLink, setActiveTravelLink] = useState(null);
+    const [activeTravelLink, setActiveTravelLink] = useState(false);
 
     const handleLinkTravelClick = (index) => {
         setActiveTravelLink(index);
-        setActiveHomeLink(null);
+        setActiveHomeLink(false);
     };
 
     return (
