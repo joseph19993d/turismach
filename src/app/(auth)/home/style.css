@@ -1,0 +1,89 @@
+/* Estilos para el nav-bar */
+.navigation {
+    position: relative;
+    width: 100%;
+    height: 60px; 
+    background: white;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border-radius: 10px;
+}
+
+.navigation ul {
+    width: 350px;
+    display: flex;
+}
+
+.navigation ul li {
+    list-style: none; 
+    position: relative; 
+    width: 70px; 
+    height: 60px;
+    z-index: 2;
+}
+
+/* Estilos para el enlace del nav-bar */
+.nav-link {
+    text-decoration: none; 
+    color: #555;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para el ícono en el enlace */
+.nav-link .icon {
+    position: relative;
+    background: #fff;
+    display: block;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 65px;
+    border-radius: 65px;
+    color: #222327;
+    font-size: 1.5em;
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+/* Estilos para el efecto de fondo al pasar el cursor */
+.nav-link:hover .icon {
+    background-color: #e1e1e1;
+    /* color: #007BFF; */
+     /* Cambia el color al pasar el cursor */
+}
+
+/* Estilos para el indicador de selección */
+.navigation .indicator {
+    width: 2px;
+    height: 100%;
+
+    /* background-color: #007BFF;  */
+    /* Cambia el color del indicador */
+    position: absolute;
+    top: 0;
+    left: -1px; /* Ajusta la posición según el ancho del <li> */
+    transform: scaleY(0); /* Oculta el indicador inicialmente */
+    transition: transform 0.3s ease-in-out;
+}
+
+.navigation ul li.active .indicator {
+    transform: scaleY(1); /* Muestra el indicador cuando el elemento está activo */
+}
+
+/* Estilos para el ícono en el enlace */
+.nav-link .icon {
+    /* ... (otros estilos) */
+    transform: translateY(0); /* Establece la posición inicial */
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+/* Estilos para el efecto de elevación al seleccionar */
+.nav-link.active .icon {
+    transform: translateY(-20px); /* Eleva el ícono */
+}
