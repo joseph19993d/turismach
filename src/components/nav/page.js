@@ -4,7 +4,7 @@ import { House } from '@phosphor-icons/react';
 import colors from 'tailwindcss/colors';
 import './style.css';
 
-export default function Home() {
+export default function nav() {
 
     const [activeHomeLink, setActiveHomeLink] = useState(null);
 
