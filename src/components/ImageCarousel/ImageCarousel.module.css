@@ -1,0 +1,33 @@
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin-top: auto; /* para que salga lo que haya encima de el*/
+    margin-bottom: auto;
+    overflow: hidden;
+  }
+
+  @media (max-width: 500px) {
+    .carouselContainer {
+      height: 200px; /* Cambia la altura para pantallas pequeñas */
+    }
+  }
+  
+  .carouselItem {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carouselItem img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .active {
+    display: block;
+  }
+  
