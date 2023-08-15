@@ -1,0 +1,49 @@
+
+.centralTextName {
+    font-size: 10vw;
+    margin: 0;
+    background-image: url(turistasViajando.png);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text; color: transparent;
+    }
+
+.TextBAT {
+    font-size: 15vw;
+    margin: 0;
+    background-image: url(turistasViajando.png);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text; color: transparent;
+    }
+
+    @media (max-width: 500px) {
+        .carouselContainer {
+          height: 400px; /* Cambia la altura para pantallas pequeñas */
+        }
+      }
+
+.carrusel{
+    
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+}
+.elemento{
+    flex: 1 0 auto;
+    margin:0 50px;
+    width: 500px;
+    height: 200px;
+
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    z-index: 100; /* Asegura que el navbar esté sobre el carrusel */
+  }
