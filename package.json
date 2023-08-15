@@ -18,11 +18,8 @@
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-<<<<<<< HEAD
     "react-icons": "^4.10.1",
-=======
     "react-responsive-carousel": "^3.2.23",
->>>>>>> 97a49d4ce94a6b85f07f257169f5ce61703a7197
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
