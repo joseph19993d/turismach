@@ -8,7 +8,11 @@ import Link from "next/link";
 import './style.css';
 import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
 
+import ProductCard from '@/components/cart/ProductCard';
+import Cart from '@/components/cart/Cart';
+
 export default function Home() {
+
     //Variables iniciales
     const images = [
         { src: "/the-lagito-cartagena-de-indias-colombia.jpg" },
@@ -17,10 +21,33 @@ export default function Home() {
         {src:"/cartagena-noche.png"}
       ];
 
+    const products = [
+    { id: 1, name: 'Servicio 1', price: 10 , src:"/chivaRumera.png" , decription:'text de descripcion text de descripcion text de descripcion' },
+    { id: 2, name: 'Servicio 2', price: 20 , src:"/isla.png" , decription:''  },
+    { id: 3, name: 'Servicio 3', price: 15 , src:"/hisla5.png" },
+    ];
+
+    //funciones 1
+    const [cart, setCart] = useState([]);
+
+    const addToCart = (product) => {
+      setCart([...cart, product]);
+    };
+
+    const calculateTotal = () => {
+        return cart.reduce((total, item) => total + item.price, 0);
+      };
+    
+    const total = calculateTotal();
+
     return(
-        //funciones 
+        //funciones 2
+
+        
+        //PAGINA
         <div>
 
+            {/* BOTON FLOTANTE*/}
             <div className="fixed bottom-4 z-11 right-4 w-[100px] flex flex-row  bg-red-500 md:text-sm text-xs btn rounded-lg text-black px-1 py-2 ">
                 
                 <div className='right-3 top-3' style={{ userSelect: 'none' }}>
@@ -36,16 +63,18 @@ export default function Home() {
                 </Link>
                 
             </div>
-
+            {/* HOME */}
+            {/* BACKGRAUND */}
             <div className="flex flex-col bg-sky-100 ">
 
-                <div >
-                {/* CARUSELL */}
-
-                    <div className='.navbar flex items-center justify-center bg-red-500  '>
+               
+                <div>
+                    {/* NAV BAR*/}
+                    <div className='.navbar flex items-center justify-center bg-With-500  '>
                         navBar
                     </div>
-
+                    
+                     {/* IMAGE CARUSELL */}
                     <div className=" flex flex-row justify-center max-w-6x1 w-full  md:rounded-3xl md:items-center md:mb-20 h-[200px]  md:h-[520px] md:drop-shadow-3xl w-full ">
 
                         <ImageCarousel images={images} />
@@ -53,7 +82,7 @@ export default function Home() {
                         <div className=" absolute z-10   flex flex-col items-center justify-center mt-10    ">
                             <div className=" bg-black bg-opacity-50   rounded w-full p-2 ">
                                 <h1 className="centralTextName font-serif  ">
-                                    Turism match
+                                    Turism mach
                                 </h1>
                             </div>
                             
@@ -68,8 +97,8 @@ export default function Home() {
                 
                 <div className="flex flex-row bg-black mt-auto mb-0 md:h-[250px] h-[200px]  ">
                     
+                    {/* Texto 1 */}
                     <div className=" flex flex-col text-left justify-center bg-black  whitespace-normal ml-10 pr-10 md:text-[40px] md:w-[200px]" >
-                    
                             <span>
                             Welcome 
                             </span>
@@ -79,6 +108,7 @@ export default function Home() {
 
                         
                     </div>
+                    {/* Texto 2 */}
                     <div className=" flex flex-col text-left justify-center bg-black  whitespace-normal" >
                             The official page of your tourist city Cartagena de Indias,
                             where you will find the best services and tourist planes in a fast and comfortable way.
@@ -90,10 +120,52 @@ export default function Home() {
                         <span> {'< Read more >'}</span>
                     </Link>
                 </div>
+
                 <div className="bg-sky-300 mt-auto">
-                    04 imagen de welcome de nuevo
+                    {/* 04 imagen de welcome de nuevo */}
+                    04
                 </div>
 
+
+                {/* SHOPING */}
+                <div className=" bg-black  mt-auto">
+                    <div className="flex flex-wrap bg-black">
+                        {/* IMAGEN */}
+                        <div className="w-1/4 p-4">
+                           
+                            <Image
+                            className="bg-blue-500 hover:-translate-y-1 hover:scale-105   rounded-l-3xl hover:rounded-3xl rounded-duration-100"
+                             src='/man-tourist-small.png'
+                             alt='Welcome image'
+                             width={500}
+                             height={300}
+                            />
+                        </div>
+
+                        {/* PRODUCTS */}
+                        <div className="w-2/4">
+                            {products.map((product) => (
+                            <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
+                            ))}
+                        </div>
+                        {/* TOTAL PRODUCTS  */}
+                        <div className=" w-1/4 ">
+                            <div className=" border p-4 m-4 ">
+                                <h2 className="text-xl font-semibold">Carrito de compras</h2>
+                                <ul className="mt-2">
+                                    {cart.map((item, index) => (
+                                    <li key={index}>{item.name} - ${item.price}</li>
+                                    ))}
+                                </ul>
+                                <p className="mt-4 font-semibold">Total: ${total}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               
+                
+                {/* SERVICES */}
                 <div className="mt-auto flex flex-row text-left  bg-black ">
                     <div className="bg-red-500 bg-opacity-50 h-[200px] w-[100px]">
                         <span>
@@ -125,7 +197,7 @@ export default function Home() {
                         
                     </div>
                 </div>
-
+                {/*  */}
                 <div className="bg-sky-300 mt-auto">
                     06
                 </div>
