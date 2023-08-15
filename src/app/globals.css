@@ -25,3 +25,29 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.carouselContainer {
+  @apply h-3/4;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  margin-top: auto; /* para que salga lo que haya encima de el*/
+  margin-bottom: auto;
+  overflow: hidden;
+}
+
+.wave{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  /* Dispositivos móviles */
+  .wave {
+    height: 70px; /* Altura ajustada para dispositivos móviles */
+  }
+}

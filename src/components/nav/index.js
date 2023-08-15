@@ -24,7 +24,7 @@ export const Nav =  () => {
     return (
         <main>
             <div>
-                <div className="navigation flex justify-center mt-5">
+                <div className="navigation flex justify-center ">
                     <ul>
                         <li className="list-item relative group">
                             <a
